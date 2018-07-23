@@ -1,12 +1,13 @@
 package com.example.u356971.unitedinflightcatering;
 
+import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.widget.TextView;
+import android.view.View;
+import android.widget.LinearLayout;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
@@ -22,33 +23,53 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_menu_homepage);
 
         //initializing views
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        recyclerView.setHasFixedSize(true);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        list = new ArrayList<>();
+        LinearLayout LunchAndDinner = (LinearLayout) findViewById(R.id.lunchAndDinner);
+        LunchAndDinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LunchAndDinner.class);
+                startActivity(intent);
+            }
 
-        //loading list view item with this function
-        loadRecyclerViewItem();
-    }
 
-    private void loadRecyclerViewItem() {
-        //you can fetch the data from server or some apis
-        //for this tutorial I am adding some dummy data directly
-        MyList temp = new MyList("Biscuit Breakfast Sanwich", "Cage-free fried egg, smoked Canadian bacon and cheddar cheese on a buttermilk biscuit");
-        list.add(temp);
-        for (int i = 1; i <= 5; i++) {
-            MyList myList = new MyList(
-                    "Dummy Heading " + i,
-                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie nisi dui."
-            );
-            list.add(myList);
-        }
+        });
 
-        adapter = new CustomAdapter(list, this);
-        recyclerView.setAdapter(adapter);
+        LinearLayout Beverages = (LinearLayout) findViewById(R.id.beverages);
+        Beverages.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Beverages.class);
+                startActivity(intent);
+            }
+
+
+        });
+
+        LinearLayout Snacks = (LinearLayout) findViewById(R.id.snacks);
+        Snacks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Snacks.class);
+                startActivity(intent);
+            }
+
+
+        });
+
+        LinearLayout snackBoxes = (LinearLayout) findViewById(R.id.snackboxes);
+        snackBoxes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, Snackboxes.class);
+                startActivity(intent);
+            }
+
+
+        });
+
     }
 }

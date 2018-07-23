@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuHomepage">
+
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent"
+       android:orientation="vertical"
+       android:padding="0dp">
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="200dp"
+          android:background="@color/primary"
+          android:orientation="vertical">
+
+         <android.support.v7.widget.Toolbar
+             android:id="@+id/my_toolbar"
+             android:layout_width="match_parent"
+             android:layout_height="?attr/actionBarSize"
+             android:elevation="4dp"
+             android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+             app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+               <ImageView
+                   android:layout_width="115dp"
+                   android:layout_height="wrap_content"
+                   android:layout_centerInParent="true"
+                   android:src="@drawable/logo" />
+
+               <ImageButton
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignParentRight="true"
+                   android:layout_centerInParent="true"
+                   android:layout_marginRight="16dp"
+                   android:background="@color/primary"
+                   android:src="@drawable/ic_shopping_cart_black_24dp" />
+
+            </RelativeLayout>
+
+         </android.support.v7.widget.Toolbar>
+
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="40dp"
+             android:gravity="center"
+             android:text="Now serving Lunch and Dinner for"
+             android:textColor="@color/icons"
+             android:textSize="20dp"></TextView>
+
+         <TextView
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:layout_marginTop="4dp"
+             android:gravity="center"
+             android:text="UA 123"
+             android:textColor="@color/icons"
+             android:textSize="25dp"></TextView>
+
+      </LinearLayout>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@android:color/darker_gray" />
+
+      <LinearLayout
+          android:id="@+id/lunchAndDinner"
+          android:layout_width="match_parent"
+          android:layout_height="90dp"
+          android:layout_marginTop="0dp"
+          android:background="?attr/selectableItemBackground"
+          android:gravity="center"
+          android:orientation="horizontal">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:paddingLeft="16dp"
+             android:text="Lunch &amp; Dinner"
+             android:textColor="@color/primary_text"
+             android:textSize="15dp" />
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical"
+             android:layout_marginRight="8dp"
+             android:adjustViewBounds="true"
+             android:maxHeight="60dp"
+             android:maxWidth="60dp"
+             android:src="@drawable/snackshop" />
+
+      </LinearLayout>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@android:color/darker_gray" />
+
+      <LinearLayout
+          android:id="@+id/beverages"
+          android:layout_width="match_parent"
+          android:layout_height="90dp"
+          android:layout_marginTop="0dp"
+          android:background="?attr/selectableItemBackground"
+          android:gravity="center"
+          android:orientation="horizontal">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:paddingLeft="16dp"
+             android:text="Beverages"
+             android:textColor="@color/primary_text"
+             android:textSize="15dp" />
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical"
+             android:layout_marginRight="8dp"
+             android:adjustViewBounds="true"
+             android:maxHeight="60dp"
+             android:maxWidth="60dp"
+             android:src="@drawable/snackshop" />
+
+      </LinearLayout>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@android:color/darker_gray" />
+
+      <LinearLayout
+          android:id="@+id/snacks"
+          android:layout_width="match_parent"
+          android:layout_height="90dp"
+          android:layout_marginTop="0dp"
+          android:background="?attr/selectableItemBackground"
+          android:gravity="center"
+          android:orientation="horizontal">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:paddingLeft="16dp"
+             android:text="Snacks"
+             android:textColor="@color/primary_text"
+             android:textSize="15dp" />
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical"
+             android:layout_marginRight="8dp"
+             android:adjustViewBounds="true"
+             android:maxHeight="60dp"
+             android:maxWidth="60dp"
+             android:src="@drawable/snackshop" />
+
+      </LinearLayout>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@android:color/darker_gray" />
+
+      <LinearLayout
+          android:id="@+id/snackboxes"
+          android:layout_width="match_parent"
+          android:layout_height="90dp"
+          android:layout_marginTop="0dp"
+          android:background="?attr/selectableItemBackground"
+          android:gravity="center"
+          android:orientation="horizontal">
+
+         <TextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:paddingLeft="16dp"
+             android:text="Snackboxes"
+             android:textColor="@color/primary_text"
+             android:textSize="15dp" />
+
+         <ImageView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_gravity="center_vertical"
+             android:layout_marginRight="8dp"
+             android:adjustViewBounds="true"
+             android:maxHeight="60dp"
+             android:maxWidth="60dp"
+             android:src="@drawable/snackshop" />
+
+      </LinearLayout>
+
+      <View
+          android:layout_width="match_parent"
+          android:layout_height="1dp"
+          android:background="@android:color/darker_gray" />
+
+   </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

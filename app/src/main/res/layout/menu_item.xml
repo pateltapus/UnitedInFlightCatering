@@ -42,15 +42,13 @@
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie nisi dui. "
                 android:textAppearance="?android:textAppearanceMedium" />
 
-            <TextView
-                android:id="@+id/textViewOptions"
-                android:layout_width="wrap_content"
+            <Button
+                android:id="@+id/orderNow"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_alignParentRight="true"
-                android:layout_alignParentTop="true"
-                android:paddingLeft="@dimen/activity_horizontal_margin"
-                android:text=""
-                android:textAppearance="?android:textAppearanceLarge" />
+                android:layout_alignParentBottom="true"
+                android:padding="@dimen/activity_vertical_margin"
+                android:text="Order Now" />
 
 
         </LinearLayout>

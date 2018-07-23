@@ -9,13 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".deepDishOrderNow" />
+        <activity android:name=".MenuHomepage" />
+        <activity android:name=".LunchAndDinner" />
+        <activity android:name=".Snacks" />
+        <activity android:name=".Snackboxes" />
+        <activity android:name=".Beverages" />
+        <activity android:name=".cheeseBurgerOrderNow" />
+        <activity android:name=".chickenSandwichOrderNow" />
+        <activity android:name=".samplerOrderNow"></activity>
     </application>
 
 </manifest>

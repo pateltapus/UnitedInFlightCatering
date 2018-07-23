@@ -1,21 +1,24 @@
 package com.example.u356971.unitedinflightcatering;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+
 
 import java.util.List;
 
 
-public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
+public class BeverageAdapter extends RecyclerView.Adapter<BeverageAdapter.ViewHolder> {
 
     private List<MyList> list;
     private Context mCtx;
 
-    public CustomAdapter(List<MyList> list, Context mCtx) {
+    public BeverageAdapter(List<MyList> list, Context mCtx) {
         this.list = list;
         this.mCtx = mCtx;
     }
@@ -27,17 +30,24 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
         return new ViewHolder(v);
     }
 
+
+
     @Override
-    public void onBindViewHolder(CustomAdapter.ViewHolder holder, int position) {
+    public void onBindViewHolder(BeverageAdapter.ViewHolder holder, int position) {
         MyList myList = list.get(position);
         holder.textViewHead.setText(myList.getHead());
         holder.textViewDesc.setText(myList.getDesc());
-
-        holder.buttonViewOption.setOnClickListener(new View.OnClickListener() {
+        holder.orderNow.setTag(myList.getTag());
+        holder.orderNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                switch((String)view.getTag())
+                {
+                    case "breakfastSandwich":
+                        Intent intent = new Intent(mCtx, deepDishOrderNow.class);
+                        mCtx.startActivity(intent);
 
-                //will show popup menu here
+                }
 
             }
         });
@@ -54,6 +64,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
         public TextView textViewHead;
         public TextView textViewDesc;
+        public Button orderNow;
         public TextView buttonViewOption;
 
         public ViewHolder(View itemView) {
@@ -61,7 +72,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
             textViewHead = (TextView) itemView.findViewById(R.id.textViewHead);
             textViewDesc = (TextView) itemView.findViewById(R.id.textViewDesc);
-            buttonViewOption = (TextView) itemView.findViewById(R.id.textViewOptions);
+            orderNow = (Button) itemView.findViewById(R.id.orderNow);
         }
     }
 }
