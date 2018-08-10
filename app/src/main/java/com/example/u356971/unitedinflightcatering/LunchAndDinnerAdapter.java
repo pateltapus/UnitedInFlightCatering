@@ -43,7 +43,6 @@ public class LunchAndDinnerAdapter extends RecyclerView.Adapter<LunchAndDinnerAd
         holder.orderNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String tag = (String)view.getTag();
                 switch((String)view.getTag())
                 {
                     case "deepDish":

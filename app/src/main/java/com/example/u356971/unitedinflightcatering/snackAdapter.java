@@ -36,28 +36,44 @@ public class snackAdapter extends RecyclerView.Adapter<snackAdapter.ViewHolder>{
         holder.textViewHead.setText(myList.getHead());
         holder.textViewDesc.setText(myList.getDesc());
         holder.image.setImageResource(myList.getImage());
+        holder.image.setScaleType(ImageView.ScaleType.FIT_CENTER);
         holder.orderNow.setTag(myList.getTag());
         holder.orderNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String tag = (String)view.getTag();
                 switch((String)view.getTag())
                 {
-                    case "deepDish":
-                        Intent intent1 = new Intent(mCtx, deepDishOrderNow.class);
+                    case "jerky":
+                        Intent intent1 = new Intent(mCtx, jerkyOrderNow.class);
                         mCtx.startActivity(intent1);
                         break;
-                    case "cheeseBurger":
-                        Intent intent2 = new Intent(mCtx, cheeseBurgerOrderNow.class);
+                    case "cb&j_mix":
+                        Intent intent2 = new Intent(mCtx, nutMixOrderNow.class);
                         mCtx.startActivity(intent2);
                         break;
-                    case "chickenSandwich":
-                        Intent intent3 = new Intent(mCtx,chickenSandwichOrderNow.class);
+                    case "chips":
+                        Intent intent3 = new Intent(mCtx,chipsOrderNow.class);
                         mCtx.startActivity(intent3);
                         break;
-                    case "sampler":
-                        Intent intent4 = new Intent(mCtx,samplerOrderNow.class);
+                    case "gummybears":
+                        Intent intent4 = new Intent(mCtx,gummyBearsOrderNow.class);
                         mCtx.startActivity(intent4);
+                        break;
+                    case "pringles":
+                        Intent intent5 = new Intent(mCtx,pringlesOrderNow.class);
+                        mCtx.startActivity(intent5);
+                        break;
+                    case "hummus":
+                        Intent intent6 = new Intent(mCtx,hummusOrderNow.class);
+                        mCtx.startActivity(intent6);
+                        break;
+                    case "m&m":
+                        Intent intent7 = new Intent(mCtx,mandmOrderNow.class);
+                        mCtx.startActivity(intent7);
+                        break;
+                    case "cheeseandcrackers":
+                        Intent intent8 = new Intent(mCtx,cheeseAndCrackersOrderNow.class);
+                        mCtx.startActivity(intent8);
                         break;
                 }
 

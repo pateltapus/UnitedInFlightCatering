@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="0dp" >
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.AppCompatRadioButton>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/creditcard"
+                    android:scaleType="centerInside"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pay with credit/debit      "
+                    android:textColor="@color/primary_text"
+                    android:layout_gravity="center_vertical" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.AppCompatRadioButton>
+
+                <ImageView
+                    android:layout_width="100dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/googlepay"
+                    android:scaleType="centerInside"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="4dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pay with Google Pay"
+                    android:textColor="@color/primary_text"
+                    android:layout_gravity="center_vertical" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="8dp">
+
+                <android.support.v7.widget.AppCompatRadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                </android.support.v7.widget.AppCompatRadioButton>
+
+                <ImageView
+                    android:layout_width="60dp"
+                    android:layout_height="35dp"
+                    android:src="@drawable/logo"
+                    android:background="@color/colorPrimary"
+                    android:scaleType="centerInside"
+                    android:layout_marginRight="8dp"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginBottom="4dp"/>
+
+                <TextView
+                    android:layout_marginLeft="18dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pay with miles"
+                    android:textColor="@color/primary_text"
+                    android:layout_gravity="center_vertical" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@android:color/darker_gray" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="continue"
+                android:background="@color/primary"
+                android:textColor="@color/icons"/>
+
+        </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

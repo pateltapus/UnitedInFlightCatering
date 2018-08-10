@@ -1,9 +1,11 @@
 package com.example.u356971.unitedinflightcatering;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,30 +25,36 @@ public class Beverages extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_beverages);
 
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        recyclerView = (RecyclerView) findViewById(R.id.beverageView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         list = new ArrayList<>();
 
         //loading list view item with this function
-        //loadRecyclerViewItem();
+        loadRecyclerViewItem();
     }
 
-//    private void loadRecyclerViewItem() {
-//        //you can fetch the data from server or some apis
-//        //for this tutorial I am adding some dummy data directly
-//        MyList temp = new MyList("Biscuit Breakfast Sanwich", "Cage-free fried egg, smoked Canadian bacon and cheddar cheese on a buttermilk biscuit","breakfastSandwich");
-//        list.add(temp);
-//        for (int i = 1; i <= 5; i++) {
-//            MyList myList = new MyList(
-//                    "Dummy Heading " + i,
-//                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi molestie nisi dui.", Integer.toString(i)
-//            );
-//            list.add(myList);
-//        }
-//
-//        adapter = new BeverageAdapter(list, this);
-//        recyclerView.setAdapter(adapter);
-//    }
+    private void loadRecyclerViewItem() {
+        MyList complimentaryDrinks = new MyList("Complimentary Beverages", "", "complimentaryDrinks", R.drawable.drinks);
+        list.add(complimentaryDrinks);
+
+        MyList wine = new MyList("House red and white wine", "", "wine", R.drawable.wine);
+        list.add(wine);
+
+        MyList beer = new MyList("Beers", "", "beer", R.drawable.beer);
+        list.add(beer);
+
+        MyList spirits = new MyList("Spirits", "", "spirits", R.drawable.spirits);
+        list.add(spirits);
+
+        adapter = new BeverageAdapter(list, this);
+        recyclerView.setAdapter(adapter);
+    }
+
+    public void showCart(View view)
+    {
+        Intent intent = new Intent(this, shoppingCart.class);
+        startActivity(intent);
+    }
 }

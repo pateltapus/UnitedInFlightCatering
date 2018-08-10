@@ -1,11 +1,13 @@
 package com.example.u356971.unitedinflightcatering;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.LinearLayoutManager;
 import java.util.List;
 import java.util.ArrayList;
+import android.view.View;
 
 public class LunchAndDinner extends AppCompatActivity {
 
@@ -36,7 +38,7 @@ public class LunchAndDinner extends AppCompatActivity {
         MyList deepDish = new MyList("UNO® pepperoni deep dish pizza", "Pepperoni, mozzarella cheese, Romano cheese and tomato sauce in a deep-dish crust","deepDish", R.drawable.deepdish);
         list.add(deepDish);
 
-        MyList cheeseBurger = new MyList("Smoked Gouda cheeseburger","Beef patty and smoked Gouda cheese on a BROOKLYN BRED® bistro bun. Served with Sir Kensingtons ketchup, mustard and chipotle mayonnaise on the side","cheeseBurger", R.drawable.cheeseburger);
+        MyList cheeseBurger = new MyList("Smoked Gouda cheeseburger","Beef patty and smoked Gouda cheese on a BROOKLYN BRED® bistro bun.","cheeseBurger", R.drawable.cheeseburger);
         list.add(cheeseBurger);
 
         MyList chickenSandwich = new MyList("Barbecue chicken sandwich", "Pulled smoked chicken, barbecue sauce, cheddar jack cheese and a dill pickle plank on a focaccia roll", "chickenSandwich", R.drawable.chickensandwich);
@@ -49,5 +51,11 @@ public class LunchAndDinner extends AppCompatActivity {
 
         adapter = new LunchAndDinnerAdapter(list, this);
         recyclerView.setAdapter(adapter);
+    }
+
+    public void showCart(View view)
+    {
+        Intent intent = new Intent(this, shoppingCart.class);
+        startActivity(intent);
     }
 }

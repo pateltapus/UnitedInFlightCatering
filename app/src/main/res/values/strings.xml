@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">UnitedInFlightCatering</string>
+
+    <string-array name="beers_array">
+        <item>Miller® Lite</item>
+        <item>Stella Artois®</item>
+        <item>New Belgium® Citradelic Tangerine IPA</item>
+        <item>Lagunitas Sumpin' Easy Ale</item>
+    </string-array>
 </resources>

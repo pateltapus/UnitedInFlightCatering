@@ -1,9 +1,11 @@
 package com.example.u356971.unitedinflightcatering;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,21 +36,37 @@ public class Snacks extends AppCompatActivity {
     }
 
     private void loadRecyclerViewItem() {
-        MyList deepDish = new MyList("UNO® pepperoni deep dish pizza", "Pepperoni, mozzarella cheese, Romano cheese and tomato sauce in a deep-dish crust","deepDish", R.drawable.deepdish);
-        list.add(deepDish);
+        MyList jerky = new MyList("Think Jerky®", "Sweet Chipotle Grass-Fed Beef Jerky", "jerky", R.drawable.jerky);
+        list.add(jerky);
 
-        MyList cheeseBurger = new MyList("Smoked Gouda cheeseburger","Beef patty and smoked Gouda cheese on a BROOKLYN BRED® bistro bun. Served with Sir Kensingtons ketchup, mustard and chipotle mayonnaise on the side","cheeseBurger", R.drawable.cheeseburger);
-        list.add(cheeseBurger);
+        MyList nuts = new MyList("Nuts.com CB&J® mix", "Butter toffee cashews, roasted salted cashews, dried strawberries, raisins, sliced cranberries", "cb&j_mix", R.drawable.nuts);
+        list.add(nuts);
 
-        MyList chickenSandwich = new MyList("Barbecue chicken sandwich", "Pulled smoked chicken, barbecue sauce, cheddar jack cheese and a dill pickle plank on a focaccia roll", "chickenSandwich", R.drawable.chickensandwich);
-        list.add(chickenSandwich);
+        MyList chips = new MyList("Lillie's Q", "Sea Salt & Black Pepper Kettle Chips", "chips", R.drawable.chips);
+        list.add(chips);
 
-        MyList sampler = new MyList("Mezze sampler", "Wheat berry salad with quinoa, edamame and corn, sun-dried tomato basil hummus, almonds and triangle pita pieces","sampler", R.drawable.mezzesampler);
-        list.add(sampler);
+        MyList gummyBears = new MyList("Haribo®", "Gold-Bears® Gummi Candy", "gummybears", R.drawable.gummybears);
+        list.add(gummyBears);
 
+        MyList pringles = new MyList("Pringles®", "Original Potato Crisps", "pringles", R.drawable.pringles);
+        list.add(pringles);
 
+        MyList hummus = new MyList("Hummus and crispbreads\n", "Dipin™ classic hummus with Primizie® Simply Salted thick cut crispbreads", "hummus", R.drawable.hummusandcrisps);
+        list.add(hummus);
 
-        adapter = new LunchAndDinnerAdapter(list, this);
+        MyList mandm = new MyList("M&M'S®", "Milk Chocolate Candies", "m&m", R.drawable.mandm);
+        list.add(mandm);
+
+        MyList cheeseandcrackers = new MyList("Cheese and crackers snackbox", "Bagel chips, roasted poblano cheddar dip, chocolate square, Everything Parmcrisps™, cheddar cheese, white cheddar cheese", "cheeseandcrackers", R.drawable.cheeseandcrackers);
+        list.add(cheeseandcrackers);
+
+        adapter = new snackAdapter(list, this);
         recyclerView.setAdapter(adapter);
+    }
+
+    public void showCart(View view)
+    {
+        Intent intent = new Intent(this, shoppingCart.class);
+        startActivity(intent);
     }
 }

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 
@@ -34,21 +35,38 @@ public class BeverageAdapter extends RecyclerView.Adapter<BeverageAdapter.ViewHo
 
     @Override
     public void onBindViewHolder(BeverageAdapter.ViewHolder holder, int position) {
-        MyList myList = list.get(position);
+        if(position == 0)
+        {
+            holder.orderNow.setText("More Info");
+        }
+        final MyList myList = list.get(position);
         holder.textViewHead.setText(myList.getHead());
         holder.textViewDesc.setText(myList.getDesc());
+        holder.image.setImageResource(myList.getImage());
+        holder.image.setScaleType(ImageView.ScaleType.CENTER_CROP);
         holder.orderNow.setTag(myList.getTag());
         holder.orderNow.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 switch((String)view.getTag())
                 {
-                    case "breakfastSandwich":
-                        Intent intent = new Intent(mCtx, deepDishOrderNow.class);
-                        mCtx.startActivity(intent);
-
+                    case "complimentaryDrinks":
+                        Intent intent1 = new Intent(mCtx, complimentaryDrinksMoreInfo.class);
+                        mCtx.startActivity(intent1);
+                        break;
+                    case "wine":
+                        Intent intent2 = new Intent(mCtx, wineOrderNow.class);
+                        mCtx.startActivity(intent2);
+                        break;
+                    case "beer":
+                        Intent intent3 = new Intent(mCtx, beerOrderNow.class);
+                        mCtx.startActivity(intent3);
+                        break;
+                    case "spirits":
+                        Intent intent4 = new Intent(mCtx, spiritsOrderNow.class);
+                        mCtx.startActivity(intent4);
+                        break;
                 }
-
             }
         });
     }
@@ -66,13 +84,14 @@ public class BeverageAdapter extends RecyclerView.Adapter<BeverageAdapter.ViewHo
         public TextView textViewDesc;
         public Button orderNow;
         public TextView buttonViewOption;
-
+        public ImageView image;
         public ViewHolder(View itemView) {
             super(itemView);
 
             textViewHead = (TextView) itemView.findViewById(R.id.textViewHead);
             textViewDesc = (TextView) itemView.findViewById(R.id.textViewDesc);
             orderNow = (Button) itemView.findViewById(R.id.orderNow);
+            image = (ImageView) itemView.findViewById(R.id.imageView);
         }
     }
 }

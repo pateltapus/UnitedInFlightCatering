@@ -11,6 +11,39 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/my_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:elevation="4dp"
+            android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+            android:background="@color/colorPrimary"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/logo" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginRight="16dp"
+                    android:background="@color/primary"
+                    android:onClick="showCart"
+                    android:src="@drawable/ic_shopping_cart_black_24dp" />
+
+            </RelativeLayout>
+
+        </android.support.v7.widget.Toolbar>
+
         <ImageView
             android:layout_width="fill_parent"
             android:layout_height="200dp"
@@ -27,13 +60,76 @@
             android:text="Mezze sampler"
             android:textAppearance="?android:textAppearanceLarge" />
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="$9.99"
+                android:textAppearance="?android:textAppearanceMedium"
+                android:textColor="@color/primary_text"/>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/veggie"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="4dp"/>
+
+        </LinearLayout>
+
         <TextView
             android:id="@+id/textViewDesc"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/textViewHead"
-            android:text="Nutrional Value"
-            android:textAppearance="?android:textAppearanceMedium" />
+            android:layout_marginTop="20dp"
+            android:textColor="@color/secondary_text"
+            android:text="Wheat berry salad with quinoa, edamame and corn, sun-dried tomato basil hummus, almonds and triangle pita pieces"
+            android:textAppearance="?android:textAppearanceMedium"
+            android:layout_weight="1"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/decrease"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:onClick="decreaseInteger"
+                android:text="-" />
+
+            <TextView
+                android:id="@+id/integer_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginTop="8dp"
+                android:text="0"
+                android:textColor="@color/primary_text"
+                android:textSize="40sp" />
+
+            <Button
+                android:id="@+id/increase"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:onClick="increaseInteger"
+                android:text="+" />
+        </LinearLayout>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Order Now"
+            android:onClick="addToCart"
+            android:textColor="@color/primary_text"/>
 
     </LinearLayout>
 
